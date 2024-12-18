@@ -2,6 +2,7 @@
 
 if (!$_POST['tablename'])
 return;
+session_start();
 
 $tablename = $_POST['tablename'];
 $q = "";
@@ -21,10 +22,10 @@ $q = $q." WHERE id=".$_POST['id'];
 }
 
 
-$host = '127.0.0.1';
-$username = 'root';
-$password = '';
-$database = 'adatok_1';
+$host = $_SESSION['host'];
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
+$database = $_SESSION['database'];
 
 $conn = new mysqli($host, $username, $password, $database);
 
