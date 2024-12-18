@@ -3,6 +3,8 @@
 if(!$_POST['tablename'])
 return;
 
+session_start();
+
 $table = $_POST['tablename'];
 $q = "INSERT INTO $table VALUES(";
 foreach($_POST as $cols)
@@ -15,10 +17,10 @@ $q = substr($q, 0, -1);
 $q = $q.");";
 
 
-$host = '127.0.0.1';
-$username = 'root';
-$password = '';
-$database = 'adatok_1';
+$host = $_SESSION['host'];
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
+$database = $_SESSION['database'];
 
 $conn = new mysqli($host, $username, $password, $database);
 
