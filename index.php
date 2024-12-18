@@ -25,7 +25,8 @@ session_start();
         <?php
         $hidden = isset($_POST['host']) ? 'd-none' : '';
         ?>
-    <div class="container text-center <?php echo $hidden ?>" id="connectbox">
+    <div class="container text-center py-5 <?php echo $hidden ?>" id="connectbox">
+        <h1>Adatbázis Kezelő Rendszer</h1>
     <form action="/" method="post">
         <label for="host">Szerver Cím</label>
     <input type="text" name="host" id="host" class="form-control">
